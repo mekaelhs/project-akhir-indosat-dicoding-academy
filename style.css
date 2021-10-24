@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto' ,sans-serif;
+  overflow-x: auto;
+  background-color: #ddd;
+  line-height: 1.65;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+nav  {
+  display: flex;
+  background-color: #343a40;
+  justify-content: space-around;
+  height: 55px;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+
+nav img {
+  padding: 3px;
+  width: 30%;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-evenly;
+}
+
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #717171;
+}
+
+.scroll {
+  transition: 1s;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: flex;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Jumbotron */
+.jumbotron {
+  width: 100%;
+  padding-top: 100px;
+}
+
+.jumbotron h1 {
+  font-size: 50px;
+}
+
+.jumbotron p {
+  font-size: 30px;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+.text-center {
+  text-align: center!important;
+}
+
+/* Main */
+
+#content {
+  flex: 3;
+}
+
+.container-satu {
+  background-color: rgb(240, 240, 240);
+  width: auto;
+  height: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  overflow: auto;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.container-dua {
+  background-color: rgb(240, 240, 240);
+  width: auto;
+  margin: 50px auto;
+  padding: 20px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.container-tiga {
+  background-color: rgb(240, 240, 240);
+  height: 500px;
+  max-width: 800px;
+  margin: 50px auto;
+  line-height: 1.8;
+}
+
+.container-tiga h1 {
+  text-align: center;
+  font-size: 35px;
+  font: bold;
+}
+
+.container-tiga h4 {
+  text-align: center;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+.layanan {
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Aside */
+#aside {
+  box-sizing: border-box;
+}
+
+aside h5 {
+  padding: 15px;
+  text-align: center;
+}
+
+aside th {
+  color: #343a40;
+}
+
+aside a {
+  text-decoration: none;
+  color: #343a40;
+}
+
+.profile header {
+  text-align: center;
+}
+
+.profile img {
+  width: 200px;
+}
+
+/* Footer */
+
+footer {
+  padding: 20px;
+  color: white;
+  background-color: #717171;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
+/* Responsive Breakpoint */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 75%;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: #343a40;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ukuran mobile */
+@media screen and (max-width:576px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 75%;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: #343a40;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container-tiga {
+    height: 800px;
+    max-width: 800px;
+    margin: 50px auto;
+    line-height: 1.2;
+  }
+
+  .container-tiga #services {
+    padding-top: 50px;
+  }
+  
+}
+
+@media(min-width: 600px) {
+  .main {
+    display: flex;
+  }
+
+  .container-satu {  
+    line-height: 3;
+    height: 700px;
+  }
+
+  .container-dua {
+  display: flex;
+  height: 700px;
+  } 
+
+  .container-dua #market{
+    margin: auto 10px;
+  }
+
+  .container-tiga {
+    height: 500px;
+  }
+
+  .container-tiga #service{
+  display: flex;
+  justify-content: space-between;
+  }
+
+  .layanan {
+    width: 30%;
+  }
+
+  #aside {
+  padding: 30px 10px;
+  flex: 1;
+  }
+
+}
